@@ -1,0 +1,71 @@
+.form_box{
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #d8d8da;
+    padding: 20px;
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .boxLabel1{
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-bottom: -10px;
+  }
+  
+  .boxLabel2{
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-bottom: -10px;
+  }
+  
+  .boxLabel3{
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-bottom: -10px;
+  }
+  
+  .pointInput{
+    width: 50px;
+    border-radius: 4px;
+    margin-left: 8px;
+    padding: 3px;
+  }
+  
+  .pointLabel{
+    margin-left: 70px;
+    margin-bottom: -30px;
+  }
+  .point{
+    margin-top: 10px;
+  }
+  
+  .checkbox{
+    height: 18px;
+    margin-left: 50px;
+    margin-top: -22px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .assPost{
+    border-radius: 6px;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    padding: 3px;
+    background-color: rgb(70, 96, 113);
+    color: #fff;
+    border: none;
+  }
+
+  .assTitle{
+    margin-left: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .dateLabel{
+      display: block;
+  }

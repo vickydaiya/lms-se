@@ -1,0 +1,389 @@
+.ic-Layout-watermark {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: var(--ic-brand-watermark-opacity);
+    background-image: var(--ic-brand-watermark);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+:root {
+    --eZLSb-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --eZLSb-fontWeight: 400;
+    --eZLSb-fontSize: 0.875rem;
+    --eZLSb-padding: 0.75rem;
+}
+
+:root {
+    --enRcg-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --enRcg-fontFamilyMonospace: Menlo, Consolas, Monaco, "Andale Mono", monospace;
+    --enRcg-fontSizeXSmall: 0.75rem;
+    --enRcg-fontSizeSmall: 0.875rem;
+    --enRcg-fontSizeMedium: 1rem;
+    --enRcg-fontSizeLarge: 1.375rem;
+    --enRcg-fontSizeXLarge: 1.75rem;
+    --enRcg-fontSizeXXLarge: 2.375rem;
+    --enRcg-fontWeightLight: 300;
+    --enRcg-fontWeightNormal: 400;
+    --enRcg-fontWeightBold: 700;
+    --enRcg-lineHeight: 1.5;
+    --enRcg-lineHeightFit: 1.125;
+    --enRcg-lineHeightCondensed: 1.25;
+    --enRcg-lineHeightDouble: 2;
+    --enRcg-letterSpacingNormal: 0;
+    --enRcg-letterSpacingCondensed: -0.0625rem;
+    --enRcg-letterSpacingExpanded: 0.0625rem;
+    --enRcg-primaryInverseColor: #FFFFFF;
+    --enRcg-primaryColor: #2D3B45;
+    --enRcg-secondaryColor: #6B7780;
+    --enRcg-secondaryInverseColor: #F5F5F5;
+    --enRcg-warningColor: #FC5E13;
+    --enRcg-brandColor: #44697d;
+    --enRcg-errorColor: #E0061F;
+    --enRcg-dangerColor: #E0061F;
+    --enRcg-successColor: #0B874B;
+    --enRcg-alertColor: #BF32A4;
+    --enRcg-paragraphMargin: 1.5rem 0;
+}
+
+:root {
+    --eHQDY-trackColor: #F5F5F5;
+    --eHQDY-color: #44697d;
+    --eHQDY-xSmallSize: 1.5em;
+    --eHQDY-xSmallBorderWidth: 0.25em;
+    --eHQDY-smallSize: 3em;
+    --eHQDY-smallBorderWidth: 0.375em;
+    --eHQDY-mediumSize: 5em;
+    --eHQDY-mediumBorderWidth: 0.5em;
+    --eHQDY-largeSize: 7em;
+    --eHQDY-largeBorderWidth: 0.75em;
+    --eHQDY-inverseColor: #0374B5;
+}
+
+:root {
+    --fbyHH-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --fbyHH-fontWeight: 400;
+    --fbyHH-color: #7d110c;
+    --fbyHH-textDecorationWithinText: underline;
+    --fbyHH-hoverTextDecorationWithinText: none;
+    --fbyHH-textDecorationOutsideText: none;
+    --fbyHH-hoverTextDecorationOutsideText: underline;
+    --fbyHH-focusOutlineWidth: 0.125rem;
+    --fbyHH-focusOutlineColor: #44697d;
+    --fbyHH-focusOutlineStyle: solid;
+    --fbyHH-hoverColor: rgb(78, 11, 8);
+    --fbyHH-colorInverse: #F5F5F5;
+    --fbyHH-focusInverseOutlineColor: #FFFFFF;
+    --fbyHH-focusInverseIconOutlineColor: #FFFFFF;
+    --fbyHH-iconSize: 1.125em;
+    --fbyHH-iconPlusTextMargin: 0.375rem;
+}
+
+:root {
+    --dUOHu-primaryInverseColor: #FFFFFF;
+    --dUOHu-primaryColor: #2D3B45;
+    --dUOHu-secondaryColor: #6B7780;
+    --dUOHu-secondaryInverseColor: #F5F5F5;
+    --dUOHu-warningColor: #FC5E13;
+    --dUOHu-brandColor: #44697d;
+    --dUOHu-errorColor: #E0061F;
+    --dUOHu-alertColor: #BF32A4;
+    --dUOHu-successColor: #0B874B;
+}
+
+:root {
+    --cGqzL-sizeXSmall: 1.125rem;
+    --cGqzL-sizeSmall: 2rem;
+    --cGqzL-sizeMedium: 3rem;
+    --cGqzL-sizeLarge: 5rem;
+    --cGqzL-sizeXLarge: 10rem;
+}
+
+:root {
+    --fOyUs-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --fOyUs-color: #2D3B45;
+    --fOyUs-colorPrimaryInverse: #FFFFFF;
+    --fOyUs-borderStyle: solid;
+    --fOyUs-borderColorPrimary: #C7CDD1;
+    --fOyUs-borderColorSecondary: #6B7780;
+    --fOyUs-borderColorSuccess: #0B874B;
+    --fOyUs-borderColorBrand: #44697d;
+    --fOyUs-borderColorInfo: #44697d;
+    --fOyUs-borderColorAlert: #BF32A4;
+    --fOyUs-borderColorWarning: #FC5E13;
+    --fOyUs-borderColorDanger: #E0061F;
+    --fOyUs-borderColorTransparent: transparent;
+    --fOyUs-borderRadiusSmall: 0.125rem;
+    --fOyUs-borderRadiusMedium: 0.25rem;
+    --fOyUs-borderRadiusLarge: 0.5rem;
+    --fOyUs-debugOutlineColor: #E0061F;
+    --fOyUs-backgroundPrimary: #FFFFFF;
+    --fOyUs-backgroundSecondary: #F5F5F5;
+    --fOyUs-backgroundPrimaryInverse: #2D3B45;
+    --fOyUs-backgroundBrand: #44697d;
+    --fOyUs-backgroundInfo: #44697d;
+    --fOyUs-backgroundAlert: #BF32A4;
+    --fOyUs-backgroundSuccess: #0B874B;
+    --fOyUs-backgroundDanger: #E0061F;
+    --fOyUs-backgroundWarning: #FC5E13;
+    --fOyUs-arrowSize: 0.5rem;
+    --fOyUs-focusOutlineStyle: solid;
+    --fOyUs-focusOutlineWidth: 0.125rem;
+    --fOyUs-focusOutlineOffset: 0.3125rem;
+    --fOyUs-focusOutlineInset: 0rem;
+    --fOyUs-focusColorInfo: #44697d;
+    --fOyUs-focusColorDanger: #E0061F;
+    --fOyUs-focusColorSuccess: #0B874B;
+    --fOyUs-focusColorInverse: #FFFFFF;
+    --fOyUs-xSmallMaxWidth: 16em;
+    --fOyUs-smallMaxWidth: 30em;
+    --fOyUs-mediumMaxWidth: 48em;
+    --fOyUs-largeMaxWidth: 62em;
+    --fOyUs-marginXxxSmall: 0.125rem;
+    --fOyUs-marginXxSmall: 0.375rem;
+    --fOyUs-marginXSmall: 0.5rem;
+    --fOyUs-marginSmall: 0.75rem;
+    --fOyUs-marginMedium: 1.5rem;
+    --fOyUs-marginLarge: 2.25rem;
+    --fOyUs-marginXLarge: 3rem;
+    --fOyUs-marginXxLarge: 3.75rem;
+    --fOyUs-paddingXxxSmall: 0.125rem;
+    --fOyUs-paddingXxSmall: 0.375rem;
+    --fOyUs-paddingXSmall: 0.5rem;
+    --fOyUs-paddingSmall: 0.75rem;
+    --fOyUs-paddingMedium: 1.5rem;
+    --fOyUs-paddingLarge: 2.25rem;
+    --fOyUs-paddingXLarge: 3rem;
+    --fOyUs-paddingXxLarge: 3.75rem;
+    --fOyUs-shadowDepth1: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2), 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+    --fOyUs-shadowDepth2: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1), 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16);
+    --fOyUs-shadowDepth3: 0 0.375rem 0.4375rem rgba(0, 0, 0, 0.1), 0 0.625rem 1.75rem rgba(0, 0, 0, 0.25);
+    --fOyUs-shadowResting: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2), 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+    --fOyUs-shadowAbove: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.1), 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16);
+    --fOyUs-shadowTopmost: 0 0.375rem 0.4375rem rgba(0, 0, 0, 0.1), 0 0.625rem 1.75rem rgba(0, 0, 0, 0.25);
+    --fOyUs-stackingTopmost: 9999;
+    --fOyUs-stackingAbove: 1;
+    --fOyUs-stackingBelow: -1;
+    --fOyUs-stackingDeepest: -9999;
+    --fOyUs-borderWidthSmall: 0.0625rem;
+    --fOyUs-borderWidthMedium: 0.125rem;
+    --fOyUs-borderWidthLarge: 0.25rem;
+}
+.fOyUs_bGBk {
+    box-sizing: border-box;
+    font-family: var(--fOyUs-fontFamily);
+    max-width: 100%;
+    overflow: visible;
+}
+:root {
+    --blnAQ-lineHeight: 1.125;
+    --blnAQ-h1FontSize: 2.375rem;
+    --blnAQ-h1FontWeight: 300;
+    --blnAQ-h1FontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --blnAQ-h2FontSize: 1.75rem;
+    --blnAQ-h2FontWeight: 400;
+    --blnAQ-h2FontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --blnAQ-h3FontSize: 1.375rem;
+    --blnAQ-h3FontWeight: 700;
+    --blnAQ-h3FontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --blnAQ-h4FontSize: 1rem;
+    --blnAQ-h4FontWeight: 700;
+    --blnAQ-h4FontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --blnAQ-h5FontSize: 0.875rem;
+    --blnAQ-h5FontWeight: 400;
+    --blnAQ-h5FontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --blnAQ-primaryInverseColor: #FFFFFF;
+    --blnAQ-primaryColor: #2D3B45;
+    --blnAQ-secondaryColor: #6B7780;
+    --blnAQ-secondaryInverseColor: #F5F5F5;
+    --blnAQ-borderPadding: 0.125rem;
+    --blnAQ-borderColor: #C7CDD1;
+    --blnAQ-borderWidth: 0.0625rem;
+    --blnAQ-borderStyle: solid;
+}
+:root {
+    --ic-brand-primary-darkened-5: #416477;
+    --ic-brand-primary-darkened-10: #3E5F71;
+    --ic-brand-primary-darkened-15: #3A5A6B;
+    --ic-brand-primary-lightened-5: #4D7083;
+    --ic-brand-primary-lightened-10: #56788A;
+    --ic-brand-primary-lightened-15: #607F90;
+    --ic-brand-button--primary-bgd-darkened-5: #416477;
+    --ic-brand-button--primary-bgd-darkened-15: #3A5A6B;
+    --ic-brand-button--secondary-bgd-darkened-5: #7C726A;
+    --ic-brand-button--secondary-bgd-darkened-15: #6F665F;
+    --ic-brand-font-color-dark-lightened-15: #4C5860;
+    --ic-brand-font-color-dark-lightened-28: #677179;
+    --ic-link-color-darkened-10: #71100B;
+    --ic-link-color-lightened-10: #8A2824;
+    --ic-brand-primary: #44697d;
+    --ic-brand-font-color-dark: #2D3B45;
+    --ic-link-color: #7d110c;
+    --ic-brand-button--primary-bgd: var(--ic-brand-primary);
+    --ic-brand-button--primary-text: #ffffff;
+    --ic-brand-button--secondary-bgd: #82786f;
+    --ic-brand-button--secondary-text: #ffffff;
+    --ic-brand-global-nav-bgd: #7d110c;
+    --ic-brand-global-nav-ic-icon-svg-fill: #ffffff;
+    --ic-brand-global-nav-ic-icon-svg-fill--active: var(--ic-brand-primary);
+    --ic-brand-global-nav-menu-item__text-color: #ffffff;
+    --ic-brand-global-nav-menu-item__text-color--active: var(--ic-link-color);
+    --ic-brand-global-nav-avatar-border: #ffffff;
+    --ic-brand-global-nav-menu-item__badge-bgd: #ffffff;
+    --ic-brand-global-nav-menu-item__badge-bgd--active: var(--ic-brand-primary);
+    --ic-brand-global-nav-menu-item__badge-text: #000000;
+    --ic-brand-global-nav-menu-item__badge-text--active: #ffffff;
+    --ic-brand-global-nav-logo-bgd: #7d110c;
+    --ic-brand-header-image: url(https://instructure-uploads.s3.amazonaws.com/account_290000000098865/attachments/59430362/iu_trident_white_120x120.png?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&Expires=1924679130&Signature=MThlsLSJTLYFwVwFiUtoAIh8nWM%3D&response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&response-expires=473364000);
+    --ic-brand-mobile-global-nav-logo: url(https://du11hjcvx0uqb.cloudfront.net/dist/images/mobile-global-nav-logo-aff8453309.svg);
+    --ic-brand-watermark: ;
+    --ic-brand-watermark-opacity: 1;
+    --ic-brand-favicon: url(https://instructure-uploads.s3.amazonaws.com/account_290000000098865/attachments/59430363/favicon.ico?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&Expires=1924679130&Signature=Y%2BNFxo2AyZgrmcejhTvGY1Spyv0%3D&response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&response-expires=473364000);
+    --ic-brand-apple-touch-icon: url(https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png);
+    --ic-brand-msapplication-tile-color: var(--ic-brand-primary);
+    --ic-brand-msapplication-tile-square: url(https://du11hjcvx0uqb.cloudfront.net/dist/images/windows-tile-eda8889e7b.png);
+    --ic-brand-msapplication-tile-wide: url(https://du11hjcvx0uqb.cloudfront.net/dist/images/windows-tile-wide-44d3cc1060.png);
+    --ic-brand-right-sidebar-logo: ;
+    --ic-brand-Login-body-bgd-color: #394B58;
+    --ic-brand-Login-body-bgd-image: ;
+    --ic-brand-Login-body-bgd-shadow-color: #2D3B45;
+    --ic-brand-Login-logo: url(https://instructure-uploads.s3.amazonaws.com/account_290000000098865/attachments/59430364/iu-canvas-logo.png?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&Expires=1924679130&Signature=%2FRZW0fjbtWdmsvt61CN%2FxM0wSsU%3D&response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&response-expires=473364000);
+    --ic-brand-Login-Content-bgd-color: none;
+    --ic-brand-Login-Content-border-color: none;
+    --ic-brand-Login-Content-inner-bgd: none;
+    --ic-brand-Login-Content-inner-border: none;
+    --ic-brand-Login-Content-inner-body-bgd: none;
+    --ic-brand-Login-Content-inner-body-border: none;
+    --ic-brand-Login-Content-label-text-color: #ffffff;
+    --ic-brand-Login-Content-password-text-color: #ffffff;
+    --ic-brand-Login-footer-link-color: #ffffff;
+    --ic-brand-Login-footer-link-color-hover: #ffffff;
+    --ic-brand-Login-instructure-logo: #ffffff;
+}
+
+:root {
+    --fLzZc-background: #FFFFFF;
+    --fLzZc-borderColor: #C7CDD1;
+    --fLzZc-borderWidth: 0.0625rem;
+    --fLzZc-borderStyle: solid;
+    --fLzZc-boxShadow: 0 0.375rem 0.4375rem rgba(0, 0, 0, 0.1), 0 0.625rem 1.75rem rgba(0, 0, 0, 0.25);
+    --fLzZc-xSmallWidth: 16em;
+    --fLzZc-smallWidth: 20em;
+    --fLzZc-regularWidth: 30em;
+    --fLzZc-mediumWidth: 48em;
+    --fLzZc-largeWidth: 62em;
+    --fLzZc-zIndex: 9999;
+}
+:root {
+    --bDzpk-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+:root {
+    --cMIPy-spacingSmall: 0.75rem;
+    --cMIPy-spacingMedium: 1.5rem;
+    --cMIPy-spacingLarge: 2.25rem;
+    --cMIPy-maxWidth: 61.9375em;
+    --cMIPy-mediumMin: min-width: 48em;
+    --cMIPy-largeMin: min-width: 62em;
+    --cMIPy-xLargeMin: min-width: 75em;
+}
+:root {
+    --fxIji-spacingSmall: 0.75rem;
+    --fxIji-spacingMedium: 1.5rem;
+    --fxIji-spacingLarge: 2.25rem;
+    --fxIji-mediumMin: min-width: 48em;
+    --fxIji-largeMin: min-width: 62em;
+    --fxIji-xLargeMin: min-width: 75em;
+}
+:root {
+    --bNerA-spacingSmall: 0.75rem;
+    --bNerA-spacingMedium: 1.5rem;
+    --bNerA-spacingLarge: 2.25rem;
+    --bNerA-mediumMin: min-width: 48em;
+    --bNerA-largeMin: min-width: 62em;
+    --bNerA-xLargeMin: min-width: 75em;
+}
+
+:root {
+    --qBMHb-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --qBMHb-fontWeight: 400;
+    --qBMHb-borderWidth: 0.0625rem;
+    --qBMHb-borderStyle: solid;
+    --qBMHb-borderColor: #C7CDD1;
+    --qBMHb-borderRadius: 0.25rem;
+    --qBMHb-color: #2D3B45;
+    --qBMHb-background: #FFFFFF;
+    --qBMHb-padding: 0.75rem;
+    --qBMHb-focusOutlineWidth: 0.125rem;
+    --qBMHb-focusOutlineStyle: solid;
+    --qBMHb-focusOutlineColor: #44697d;
+    --qBMHb-errorBorderColor: #E0061F;
+    --qBMHb-errorOutlineColor: #E0061F;
+    --qBMHb-placeholderColor: #6B7780;
+    --qBMHb-smallFontSize: 0.875rem;
+    --qBMHb-smallHeight: 1.75rem;
+    --qBMHb-mediumFontSize: 1rem;
+    --qBMHb-mediumHeight: 2.375rem;
+    --qBMHb-largeFontSize: 1.375rem;
+    --qBMHb-largeHeight: 3rem;
+}
+
+:root {
+    --cECYn-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --cECYn-fontWeight: 400;
+    --cECYn-color: #FFFFFF;
+    --cECYn-fontSize: 0.75rem;
+    --cECYn-colorDanger: #E0061F;
+    --cECYn-colorSuccess: #0B874B;
+    --cECYn-colorPrimary: #44697d;
+    --cECYn-colorInverse: #2D3B45;
+    --cECYn-size: 1.25rem;
+    --cECYn-countOffset: 0.5rem;
+    --cECYn-notificationOffset: 0.125rem;
+    --cECYn-notificationZIndex: 1;
+    --cECYn-sizeNotification: 0.75rem;
+    --cECYn-borderRadius: 999rem;
+    --cECYn-padding: 0.375rem;
+    --cECYn-pulseBorderThickness: 0.125rem;
+}
+
+:root {
+    --elMgC-background: #FFFFFF;
+    --elMgC-borderWidthSmall: 0.0625rem;
+    --elMgC-borderWidthMedium: 0.125rem;
+    --elMgC-borderColor: #C7CDD1;
+    --elMgC-boxShadowColor: rgba(45, 59, 69, 0.12);
+    --elMgC-boxShadowBlur: 1rem;
+    --elMgC-fontFamily: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --elMgC-fontWeight: 700;
+    --elMgC-color: #0374B5;
+    --elMgC-colorShamrock: #0B874B;
+    --elMgC-colorBarney: #BF32A4;
+    --elMgC-colorCrimson: #E0061F;
+    --elMgC-colorFire: #FC5E13;
+    --elMgC-colorLicorice: #2D3B45;
+    --elMgC-colorAsh: #6B7780;
+}
+
+body {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: var(--ic-brand-font-color-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --dqmEK-arrowSize: 0.5rem;
+    --dqmEK-arrowBorderWidth: 0.0625rem;
+    --dqmEK-arrowBackgroundColor: #FFFFFF;
+    --dqmEK-arrowBorderColor: #C7CDD1;
+    --dqmEK-arrowBackgroundColorInverse: #2D3B45;
+    --dqmEK-arrowBorderColorInverse: transparent;
+}
+
