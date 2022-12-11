@@ -15,8 +15,8 @@ let encodeUrl = parseUrl.urlencoded({ extended: false });
 var con = mysql.createConnection({
     host: "localhost",
     user: "root", // my username
-    password: "Tiger@12345678", // my password
-    database: "project"
+    password: "root1234", // my password
+    database: "lms"
 });
 
 app.listen(PORT,()=>{
@@ -114,10 +114,11 @@ app.post('/login', encodeUrl, (req, res) => {
       });
 });
 
-app.get('/dashboard', encodeUrl, (req, res) => {
+app.post('/dashboard', encodeUrl, (req, res) => {
+  var user_email = req.body.user_email;
   con.connect(function(err) {
       if (err) throw err;
-      var sql = `SELECT coursename FROM courses WHERE courseid in (SELECT courseid FROM enrollment WHERE userid = 1)`;
+      var sql = `SELECT coursename FROM courses WHERE courseid in (SELECT courseid FROM enrollment WHERE userid = (SELECT userid FROM users WHERE email = '${user_email}') )`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         res.send(result);
@@ -229,12 +230,28 @@ app.get('/logout', encodeUrl, (req, res) => {
 
 app.post('/courseannouncements',encodeUrl, (req, res) => {
   var course = req.body.course
+  var user_email = req.body.user
   console.log("here")
   con.connect(function(err) {
       if (err) throw err;
-      var sql = `SELECT * FROM announcements WHERE course = '${course}'`;
+      var sql = `SELECT * FROM announcements, (SELECT role FROM enrollment WHERE courseid = (SELECT courseid FROM courses WHERE coursename = '${course}') AND userid = (SELECT userid FROM users WHERE email = '${user_email}')) as role WHERE Course = (SELECT courseid FROM courses WHERE coursename = '${course}')`;
       con.query(sql, function (err, result) {
         if (err) throw err;
+        res.send(result);
+      });
+    });  
+});
+
+app.post('/isteacher',encodeUrl, (req, res) => {
+  var course = req.body.course
+  var user_email = req.body.user
+  console.log("here")
+  con.connect(function(err) {
+      if (err) throw err;
+      var sql = `SELECT role FROM enrollment WHERE courseid = (SELECT courseid FROM courses WHERE coursename = '${course}') AND userid = (SELECT userid FROM users WHERE email = '${user_email}')`;
+      con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(result)
         res.send(result);
       });
     });  
@@ -296,7 +313,8 @@ app.post('/currassignments',encodeUrl, (req, res) => {
   var course = req.body.course
   con.connect(function(err) {
       if (err) throw err;
-      var sql = `SELECT id, assignment_title, maxpoints, convert_tz(availabletilldate,'+00:00', @@GLOBAL.time_zone) as availabletilldate, convert_tz(duedate,'+00:00', @@GLOBAL.time_zone) as duedate, description FROM assignments WHERE courseid = (SELECT courseid FROM courses WHERE coursename = '${course}') AND duedate > NOW()`;
+      var sql = `SELECT id, assignment_title, maxpoints, convert_tz(availabletilldate,'+00:00', @@GLOBAL.time_zone) as availabletilldate, convert_tz(duedate,'+00:00', @@GLOBAL.time_zone) as duedate, description FROM assignments WHERE courseid = (SELECT courseid FROM courses WHERE coursename = '${course}') AND duedate > NOW() AND releasedate <= NOW()`;
+      // var sql = `SELECT convert_tz(availabletilldate,'+00:00', @@GLOBAL.time_zone) as availabletilldate FROM assignments`;
       console.log(sql)
       con.query(sql, function (err, result) {
         if (err) throw err;
@@ -423,4 +441,71 @@ app.post('/getassignmentinfo', encodeUrl, (req, res) => {
       res.send(result)
     });
   });
+});
+
+
+app.post('/postannouncement', encodeUrl, (req, res) => {
+ const convertDate = dateStr => {
+  let [month, day, year] = dateStr.split('/');
+  if(parseInt(day)<10){
+    day = '0'+day
+  }
+  if(parseInt(month)<10){
+    month = '0'+month
+  }
+  return `${year}/${month}/${day}`;
+};
+  var title = req.body.title;
+  var description = req.body.description;
+  var post_date = req.body.postdate;
+  var course = req.body.course;
+  
+  post_date = convertDate(post_date.split(/,| /)[0])
+
+  con.connect(function(err) {
+      if (err) throw err;
+      var sql = `INSERT INTO announcements (DatePosted, subj, announcement, Course) VALUES ('${post_date}', '${title}', '${description}', (SELECT courseid FROM courses WHERE coursename = '${course}'))`;
+      con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Announcement Posted!");
+        res.sendStatus(200)
+      });
+    });
+  
+  
+  
+});
+
+app.post('/editcoursehome', encodeUrl, (req, res) => {
+   var title = req.body.title;
+   var description = req.body.description.replaceAll('\'','\\\'');
+   var course = req.body.course;
+   con.connect(function(err) {
+       if (err) throw err;
+       var sql = `UPDATE courses SET home_title = '${title}', home_description = '${description}' WHERE coursename = '${course}';`;
+       con.query(sql, function (err, result) {
+         if (err) throw err;
+         console.log("Homepage edited!");
+         res.sendStatus(200)
+       });
+     });
+   
+   
+   
+ });
+
+ app.post('/gethomepage', encodeUrl, (req, res) => {
+  var course = req.body.course;
+  var user_email = req.body.user
+  con.connect(function(err) {
+      if (err) throw err;
+      var sql = `SELECT home_title, home_description,(SELECT role FROM enrollment WHERE courseid = (SELECT courseid FROM courses WHERE coursename = '${course}') AND userid = (SELECT userid FROM users WHERE email = '${user_email}')) as role FROM courses WHERE coursename = '${course}';`;
+      con.query(sql, function (err, result) {
+        if (err) throw err;
+        res.send(result)
+      });
+    });
+  
+  
+  
 });

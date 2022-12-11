@@ -1,3 +1,9 @@
+.body{
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  height: 100vh;
+}
 .form_box{
     align-items: center;
     border-radius: 8px;
@@ -60,6 +66,17 @@
     border: none;
   }
 
+  .assCancelBtn{
+    border-radius: 3px;
+    margin-left: 935px;
+    margin-bottom: -34px;
+    padding: 5px;
+    background-color: rgb(234,234,234);
+    color: #2f2d2f;
+    border: none;
+    display: flex;
+  }
+
   .assTitle{
     margin-left: 70px;
     margin-top: 30px;
@@ -68,4 +85,17 @@
 
   .dateLabel{
       display: block;
+  }
+  .titleInput{
+      width: 800px;
+      display: block;
+    }
+  .atch{
+    display: block;
+    width: 800px;
+    height:60px;
+  }
+  .atchBox{
+    margin-top: 30px;
+    margin-bottom: 30px;
   }

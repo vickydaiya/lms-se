@@ -7,7 +7,9 @@ const Cards = () => {
 const [cardData, setCardData] = useState([]);
 useEffect(() => {
     const fetchData = async () => {
-        axios.get("http://localhost:4000/dashboard").then(result =>{
+        axios.post("http://localhost:4000/dashboard",{
+            user_email: localStorage.getItem('userid')
+        }).then(result =>{
             console.log(result.data)
             setCardData(result.data)
         })

@@ -45,15 +45,19 @@ export const Login = () => {
 
     useEffect(() => {
         /* global google */
-        google.accounts.id.initialize({
-            client_id : "51681250470-0seqgjodve1mcgkpaphtdmf5it588vpq.apps.googleusercontent.com",
-            callback: handleCallbackResponse
-
-        });
-        google.accounts.id.renderButton(
-            document.getElementById("signInDiv"),
-            {theme : "outline", size: "large"}
-        );
+        if(google != null)
+        {
+            google.accounts.id.initialize({
+                client_id : "51681250470-0seqgjodve1mcgkpaphtdmf5it588vpq.apps.googleusercontent.com",
+                callback: handleCallbackResponse
+    
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("signInDiv"),
+                {theme : "outline", size: "large"}
+            );
+        }
+        
     },[]);
     // const UnsuccessfulGoogleLogin = (response) =>{
     //     window.location.href='/unsuccesful'

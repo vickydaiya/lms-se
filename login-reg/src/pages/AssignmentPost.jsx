@@ -53,7 +53,7 @@ export const AssignmentPost = (props) => {
         <form onSubmit={createAssignment}>
         <div className="assTitle">
             <label>Assignment Name</label>
-            <input className="assNameInput" value={assignmentName} onChange={(e)=>setAssignmentName(e.target.value)} placeholder="Assignment Name" type="AssName" id="AssName" name="AssName"/>
+            <input className="titleInput" value={assignmentName} onChange={(e)=>setAssignmentName(e.target.value)} placeholder="Assignment Name" type="AssName" id="AssName" name="AssName"/>
         </div>
         <TextEditor changeState={changeState}></TextEditor>
         <div className="point">
@@ -134,7 +134,7 @@ export const AssignmentPost = (props) => {
             yearAriaLabel="Year"
           />
             </div>
-
+            <hr></hr>
         <button type="submit" className="assPost">Publish</button>
     </form>
     </SideBar>

@@ -5,29 +5,45 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import MainSideBar from "../components/MainSideBar";
-
+import { FaPlus } from "react-icons/fa";
+import parse from "html-react-parser";
 
 function CourseAnmt() {
     var params = useParams()
     const [anmtData, setAnmtData] = useState([]);
+    const [isTeacher, setIsTeacher] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
             axios.post("http://localhost:4000/courseannouncements",{
-                course: params.course
+                course: params.course,
+                user:localStorage.getItem('userid')
             }).then(result =>{
                 console.log(result.data)
+                setIsTeacher(result.data[0].role  === 'teacher' ? true : false)
                 setAnmtData(result.data)
             })
         }
         fetchData()
-    }, [])
+    }, [params.course])
+
+    const yyyymmdd = (date) => {
+      var mm = date.getMonth() + 1; 
+      var dd = date.getDate();
+  
+      return [date.getFullYear(),
+              (mm>9 ? '' : '0') + mm,
+              (dd>9 ? '' : '0') + dd
+            ].join('/');
+  };
+
 
     return(
       <div>  
       <MainSideBar>
       <SideBar>
   
-  
+      
+      {isTeacher ? <button className="ancPost" onClick={event => window.location.href = "/"+params.course+'/AnnouncementPost'}> <FaPlus className="plusIcon"/> Add announcement </button> : null}
   
         <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Italic-4eb103b4d1.woff2" as="font" type="font/woff2" crossOrigin="anonmyous" />
   
@@ -93,17 +109,21 @@ function CourseAnmt() {
                     <span alt="Donald Strawser" name="Donald Strawser" src="https://iu.instructure.com/images/thumbnails/59721741/Al59AAfg5hRuSVvSVVJaEJDc1lwgTWFo2hf524ge" data-fs-exclude="true" color="default" shape="circle" aria-label="Donald Strawser" role="img" className="fOyUs_bGBk fOyUs_cuDs elMgC_bGBk elMgC_doqw elMgC_cJVF elMgC_ddES elMgC_cHTY" style={{backgroundImage: 'url("https://iu.instructure.com/images/thumbnails/59721741/Al59AAfg5hRuSVvSVVJaEJDc1lwgTWFo2hf524ge")'}}>
                     <img src="https://iu.instructure.com/images/thumbnails/59721741/Al59AAfg5hRuSVvSVVJaEJDc1lwgTWFo2hf524ge" className="elMgC_MrJH" alt="Donald Strawser" aria-hidden="true" /></span></div>
                     <div className="ic-item-row__content-col">
-                    <a className="ic-item-row__content-link" href="https://iu.instructure.com/courses/2084963/discussion_topics/12200750">
+                    {/* <a className="ic-item-row__content-link" href="https://iu.instructure.com/courses/2084963/discussion_topics/12200750"> */}
                     <div className="ic-item-row__content-link-container" data-testid="single-announcement-test-id">
                     <h3 className="fOyUs_bGBk blnAQ_bGBk blnAQ_dnfM blnAQ_drOs">
-                    <span className="ergWt_bGBk"></span>{anmtData.subj}+</h3></div></a>
+                    <span className="ergWt_bGBk"></span>{anmtData.subj}</h3></div>
+                    {/* </a> */}
                     <span className="ic-section-tooltip">
                     <span data-position="uZxaObLTamT2">
-                    <span aria-describedby="uTVGCC36myjT" data-popover-trigger="true" data-position-target="uZxaObLTamT2"><span wrap="normal" letterSpacing="normal" className="enRcg_bGBk enRcg_doqw enRcg_eQnG">All Sections</span></span></span></span>
-                    <div className="ic-item-row__content-container"><div className="ic-announcement-row__content">{anmtData.announcement}</div></div></div>
+                    <span aria-describedby="uTVGCC36myjT" data-popover-trigger="true" data-position-target="uZxaObLTamT2">
+                      {/* <span wrap="normal" letterSpacing="normal" className="enRcg_bGBk enRcg_doqw enRcg_eQnG">All Sections</span> */}
+                      </span></span></span>
+                    <div className="ic-item-row__content-container"><div className="ic-announcement-row__content">{parse(anmtData.announcement)}</div></div>
+                    </div>
                     <div className="ic-item-row__meta-col"><div className="ic-item-row__meta-actions"><span className="ic-item-row__master-course-lock lock-icon" /></div>
                     <div className="ic-item-row__meta-content"><div><span className="ic-item-row__meta-content-heading"><p wrap="normal" letterSpacing="normal" className="enRcg_bGBk enRcg_doqw enRcg_eQnG">Posted on:</p></span>
-                    <span className="ic-item-row__meta-content-timestamp"><p color="secondary" wrap="normal" letterSpacing="normal" className="enRcg_bGBk enRcg_doqw enRcg_eQnG enRcg_bLsb">{anmtData.DatePosted}</p></span></div></div></div></div>
+                    <span className="ic-item-row__meta-content-timestamp"><p color="secondary" wrap="normal" letterSpacing="normal" className="enRcg_bGBk enRcg_doqw enRcg_eQnG enRcg_bLsb">{yyyymmdd(new Date(anmtData.DatePosted))}</p></span></div></div></div></div>
                 ))}
                     </span></div></div> 
           </div>

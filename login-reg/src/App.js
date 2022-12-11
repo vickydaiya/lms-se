@@ -13,8 +13,12 @@ import { AdminDashboard } from "./pages/admindashboard";
 import {CourseCalendar} from "./pages/CourseCalendar";
 import {AssignmentPost} from "./pages/AssignmentPost";
 import {AssignmentPage} from "./pages/AssignmentPage";
+import { EditCourseHome } from "./pages/EditCourseHome";
 import { Route, Routes} from "react-router-dom";
 import io from 'socket.io-client';
+import { AnnouncementPost } from "./pages/AnnouncementPost";
+import {Grading} from "./pages/Grading";
+import {StudentGrading} from "./pages/StudentGrading";
 const socket = io.connect("http://localhost:3001");
 
 function App() {  
@@ -33,7 +37,11 @@ function App() {
         <Route path="/:course/chat" element = { <Chat socket={socket}/> } />
         <Route path="/CourseCalendar" element = { <CourseCalendar/> } />
         <Route path="/:course/AssignmentPost" element = { <AssignmentPost/> } />
+        <Route path="/:course/:assignmentid/grading" element = { <StudentGrading/> } />
+        <Route path="/:course/grading" element = { <Grading/> } />
         <Route path="/:course/:assignmentid" element = { <AssignmentPage/> } />
+        <Route path="/:course/EditCourseHome" element = { <EditCourseHome/> } />
+        <Route path="/:course/AnnouncementPost" element = { <AnnouncementPost/> } />
         <Route path="*" element={<Login/>} />
       </Routes>
   );

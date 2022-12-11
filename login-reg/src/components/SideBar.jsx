@@ -23,6 +23,10 @@ const SideBar = ({children}) => {
         {
             path:"/"+params.course+"/chat",
             name:"Chat"
+        },
+        {
+            path:"/"+params.course+"/grading",
+            name:"Grading"
         }
     ]
     return (

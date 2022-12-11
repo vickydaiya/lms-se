@@ -84,9 +84,9 @@ const Courses = () =>{
       <div className="mx-20 border">
         <div className="flex p-5 bg-gray-50 justify-between">
             <div className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
+                </svg> */}
                 <h1 className="text-xl font-medium pl-3">0100-LEC (6442)</h1>
             </div>
             <div className="flex gap-24 font-medium text-xl">
