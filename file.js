@@ -13,7 +13,7 @@ const PORT = 4000;
 let encodeUrl = parseUrl.urlencoded({ extended: false });
 
 var con = mysql.createConnection({
-    host: "localhost",
+    host: "73.102.131.14",
     user: "root", // my username
     password: "root1234", // my password
     database: "lms"
