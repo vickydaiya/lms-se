@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import MainSideBar from "../components/MainSideBar";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import configdata from "../config.json"
 
 
 export const CourseCalendar = () =>{
@@ -17,7 +18,7 @@ export const CourseCalendar = () =>{
     const [calendarData, setCalendarData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            axios.get("http://localhost:4000/calendardata").then(result =>{
+            axios.get(configdata.SERVER_URL+"/calendardata").then(result =>{
                 console.log(result.data)
                 setCalendarData(result.data)
             })

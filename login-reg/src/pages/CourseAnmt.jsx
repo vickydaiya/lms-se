@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import MainSideBar from "../components/MainSideBar";
 import { FaPlus } from "react-icons/fa";
 import parse from "html-react-parser";
+import configdata from "../config.json"
 
 function CourseAnmt() {
     var params = useParams()
@@ -14,7 +15,7 @@ function CourseAnmt() {
     const [isTeacher, setIsTeacher] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
-            axios.post("http://localhost:4000/courseannouncements",{
+            axios.post(configdata.SERVER_URL+"/courseannouncements",{
                 course: params.course,
                 user:localStorage.getItem('userid')
             }).then(result =>{

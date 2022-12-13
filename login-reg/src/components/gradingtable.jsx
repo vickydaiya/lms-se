@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import configdata from "../config.json"
 
 const GradingTable = () => {
     var params = useParams();
     const [requestsData, setRequestsData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            axios.post("http://localhost:4000/gradingtable",{
+            axios.post(configdata.SERVER_URL+"/gradingtable",{
                 coursename: params.course
             }).then(result =>{
                 console.log(result.data)

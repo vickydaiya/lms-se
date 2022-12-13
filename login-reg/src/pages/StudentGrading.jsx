@@ -5,6 +5,7 @@ import SideBar from "../components/SideBar";
 import MainSideBar from "../components/MainSideBar";
 import parse from "html-react-parser";
 import * as ReactBootStrap from "react-bootstrap";
+import configdata from "../config.json"
 
 export function StudentGrading(){
 
@@ -15,7 +16,7 @@ export function StudentGrading(){
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.post("http://localhost:4000/studentgrading",{
+            axios.post(configdata.SERVER_URL+"/studentgrading",{
               coursename: course
             }).then(result =>{
               console.log(result.data)

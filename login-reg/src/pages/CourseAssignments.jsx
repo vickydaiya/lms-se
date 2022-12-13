@@ -7,13 +7,14 @@ import MainSideBar from "../components/MainSideBar";
 import "../App.css"
 import { useParams } from "react-router-dom";
 import axios from "axios"
+import configdata from "../config.json"
 
 function CourseAssignments() {
     let params = useParams();
     const [isTeacher, setIsTeacher] = useState(false);
     useEffect(() => {
       const fetchData = async () => {
-        axios.post("http://localhost:4000/isteacher",{
+        axios.post(configdata.SERVER_UR+"/isteacher",{
           user: localStorage.getItem('userid'),
           course: params.course
           }).then(result =>{

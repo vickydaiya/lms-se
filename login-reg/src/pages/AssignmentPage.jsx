@@ -6,6 +6,7 @@ import MainSideBar from "../components/MainSideBar";
 import parse from "html-react-parser";
 import { TextEditor } from "../components/TextEditor";
 import { FileUpload } from "../components/FileUpload";
+import configdata from "../config.json"
 
 export function AssignmentPage() {
     let params = useParams();
@@ -15,7 +16,7 @@ export function AssignmentPage() {
     const [isFileUpload, setIsFileUpload] = useState(false);
     useEffect(() => {
       const fetchData = async () => {
-          axios.post("http://localhost:4000/getassignmentinfo",{
+          axios.post(configdata.SERVER_URL+"/getassignmentinfo",{
             id: assingment_id
           }).then(result =>{
             console.log(result.data[0])

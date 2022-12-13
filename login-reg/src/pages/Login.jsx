@@ -3,6 +3,7 @@ import '../App.css';
 import axios from "axios";
 import { useEffect } from "react";
 import jwt_decode from 'jwt-decode';
+import configdata from "../config.json"
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ export const Login = () => {
 
     const login = (e) => {
         e.preventDefault()
-        axios.post("https://backend-x159.onrender.com:4000/login",{
+        axios.post(configdata.SERVER_URL + "/login",{
         User_Email:email,
         User_Password:pass
         }).then(result =>{

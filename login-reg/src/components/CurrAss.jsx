@@ -4,6 +4,7 @@ import {FaRocket}from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import configdata from "../config.json"
 
 export const CurrAss = () =>{
 
@@ -11,7 +12,7 @@ export const CurrAss = () =>{
     const [assignmentData, setAssignmentData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            axios.post("http://localhost:4000/currassignments",{
+            axios.post(configdata.SERVER_URL+"/currassignments",{
                 course: params.course
             }).then(result =>{
                 console.log(result.data)

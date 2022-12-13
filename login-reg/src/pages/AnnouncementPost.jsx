@@ -5,6 +5,7 @@ import { TextEditor } from "../components/TextEditor";
 import './Forms.css';
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import configdata from "../config.json"
 
 
 export const AnnouncementPost = (props) => {
@@ -17,7 +18,7 @@ export const AnnouncementPost = (props) => {
     const postAnnouncement = (e) => {
         e.preventDefault();
         
-        axios.post("http://localhost:4000/postannouncement",{
+        axios.post(configdata.SERVER_URL + "/postannouncement",{
         title:topicTitle,
         description:announcement,
         postdate:new Date().toLocaleString(),

@@ -1,5 +1,6 @@
 import React, { useState } from "react";    
 import axios from "axios";
+import configdata from "../config.json"
 
 export const Register = () => {
     const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ export const Register = () => {
     const register = (e) => {
         window.location.href='/login'
         e.preventDefault()
-        axios.post("http://localhost:4000/register",{
+        axios.post(configdata.SERVER_URL+"/register",{
         User_Email:email,
         User_FirstName:firstName,
         User_LastName:lastName,

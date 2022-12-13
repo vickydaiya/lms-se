@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import axios from "axios"
+import configdata from "../config.json"
 
 const AdminTable = () =>{
 	
@@ -24,7 +25,7 @@ const AdminTable = () =>{
     const [requestsData, setRequestsData] = useState([]);
     useEffect(() => {
     const fetchData = async () => {
-        axios.get("http://localhost:4000/adminrequests").then(result =>{
+        axios.get(configdata.SERVER_URL+"/adminrequests").then(result =>{
             console.log(result.data)
             setRequestsData(result.data)
         })

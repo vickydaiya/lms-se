@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import  '../App.css'
 import axios from "axios"
+import configdata from "../config.json"
 
 export const PassReset = () => {
 
@@ -10,7 +11,7 @@ export const PassReset = () => {
     const resetpassword = (e) => {
         e.preventDefault()
         if(pass === passC){
-            axios.post("http://localhost:4000/resetpassword",{
+            axios.post(configdata.SERVER_URL+"/resetpassword",{
             newpassword: pass
             }).then(result =>{
                 window.location.href='/login'

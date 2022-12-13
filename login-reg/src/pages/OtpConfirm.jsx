@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import  '../App.css'
 import axios from "axios";
+import configdata from "../config.json"
 
 export const OtpConfirm = () => {
 
@@ -8,7 +9,7 @@ export const OtpConfirm = () => {
 
     const sendotp = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:4000/confirmotp",{
+        axios.post(configdata.SERVER_URL+"/confirmotp",{
         OTP: otp
         }).then(result =>{
             if (result.status === 200){

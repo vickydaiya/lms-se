@@ -4,6 +4,7 @@ import {FaBook}from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import configdata from "../config.json"
 
 export const DueAss = () =>{
 
@@ -11,7 +12,7 @@ export const DueAss = () =>{
     const [assignmentData, setAssignmentData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            axios.post("http://localhost:4000/dueassignments",{
+            axios.post(configdata.SERVER_URL+"/dueassignments",{
                 course: params.course
             }).then(result =>{
                 console.log(result.data)

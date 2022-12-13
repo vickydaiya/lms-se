@@ -6,6 +6,7 @@ import MainSideBar from "../components/MainSideBar";
 import '../App.css'
 import { FaEdit } from "react-icons/fa";
 import parse from "html-react-parser";
+import configdata from "../config.json"
 
 function CourseHome() {
     let params = useParams();
@@ -14,7 +15,7 @@ function CourseHome() {
     const [isTeacher, setIsTeacher] = useState(false);
     useEffect(() => {
       const fetchData = async () => {
-        axios.post("http://localhost:4000/gethomepage",{
+        axios.post(configdata.SERVER_URL+"/gethomepage",{
           user: localStorage.getItem('userid'),
           course: params.course
           }).then(result =>{

@@ -1,6 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react";
 import Pagination from "./pagination";
+import configdata from "../config.json"
 
 const Courses = () =>{
 
@@ -14,7 +15,7 @@ const Courses = () =>{
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get("http://localhost:4000/courses").then(result =>{
+            axios.get(configdata.SERVER_URL+"/courses").then(result =>{
                 setCoursesData(result.data)
                 // console.log(result.data)
             })

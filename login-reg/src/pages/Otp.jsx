@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import  '../App.css'
 import axios from "axios";
-
+import configdata from "../config.json"
 export const Otp = () => {
 
     const [email, setEmail] = useState('');
 
     const sendmail = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:4000/sendotp",{
+        axios.post(configdata.SERVER_URL+"/sendotp",{
         Email:email
         }).then(result =>{
             window.location.href='/otpconfirm'

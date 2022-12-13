@@ -6,6 +6,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { TextEditor } from "../components/TextEditor";
 import './Forms.css'
+import configdata from "../config.json"
 
 export const EditCourseHome = (props) => {
     const [pageTitle, setPageTitle] = useState('');
@@ -18,7 +19,7 @@ export const EditCourseHome = (props) => {
 
     const editcoursehome = (e) => {
         console.log("CHALO")
-        axios.post("http://localhost:4000/editcoursehome",{
+        axios.post(configdata.SERVER_URL+"/editcoursehome",{
         title:pageTitle,
         description:description,
         course: params.course,

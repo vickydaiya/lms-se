@@ -8,6 +8,7 @@ import MainSideBar from "../components/MainSideBar";
 import SideBar from "../components/SideBar";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import configdata from "../config.json"
 
 export const AssignmentPost = (props) => {
     const [points, setPoints] = useState('');
@@ -25,7 +26,7 @@ export const AssignmentPost = (props) => {
     const createAssignment = (e) => {
         e.preventDefault();
         
-        axios.post("http://localhost:4000/createassignment",{
+        axios.post(configdata.SERVER_URL+"/createassignment",{
         assignment_name:assignmentName,
         points:points,
         due_date: dueDate.toLocaleString(),

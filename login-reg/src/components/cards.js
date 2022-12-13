@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Row, Col, Container} from "react-bootstrap";
+import configdata from "../config.json"
 
 const Cards = () => {
 
 const [cardData, setCardData] = useState([]);
 useEffect(() => {
     const fetchData = async () => {
-        axios.post("http://localhost:4000/dashboard",{
+        axios.post(configdata.SERVER_URL+"/dashboard",{
             user_email: localStorage.getItem('userid')
         }).then(result =>{
             console.log(result.data)
