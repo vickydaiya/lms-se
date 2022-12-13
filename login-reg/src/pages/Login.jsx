@@ -23,10 +23,10 @@ export const Login = () => {
                 window.location.href='/dashboard'
             }
             else if(result.data === "incorrect"){
-                alert("incorrect password")
+                alert("incorrect password!")
             }
             else{
-                alert("user doesn't exist")
+                alert("user doesn't exist!")
             }
         })
     }
