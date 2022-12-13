@@ -3,7 +3,6 @@ const cors = require('cors')
 var parseUrl = require('body-parser');
 var mysql = require('mysql2');
 const http = require("http");
-// const sessions = require('express-session');
 const { Server } = require("socket.io");
 
 const app = express();
