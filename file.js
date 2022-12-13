@@ -13,10 +13,10 @@ const PORT = 4000;
 let encodeUrl = parseUrl.urlencoded({ extended: false });
 
 var con = mysql.createConnection({
-    host: "Vickys-MacBook-Air.local",
-    user: "root", // my username
-    password: "root1234", // my password
-    database: "lms"
+    host: "sql9.freesqldatabase.com",
+    user: "sql9584350", // my username
+    password: "ahNjT2udcp", // my password
+    database: "sql9584350"
 });
 
 app.listen(PORT,()=>{
